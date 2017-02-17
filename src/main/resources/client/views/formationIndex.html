@@ -1,0 +1,120 @@
+<html><div class="container">
+
+<style>
+  
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin :auto;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover{background-color:#f5f5f5;}
+/*
+menu
+*/
+
+    /* style du bloc ul */
+.menu-vertical {
+  width: 250px; /* optionnel, c'est pour la démo */
+  list-style: none; /* supprime les puces de liste */
+  padding: 4px; /* on fait un peu de place autour des liens */
+  margin: 0; /* on annule les marges */
+  background: #F2F2F2;
+}
+ 
+/* styles des liens et éléments de liste */
+.mv-item,
+.mv-item a {
+  /* les liens et item deviennent des blocs */
+  /* suffit théoriquement à virer les puces de liste */
+  display: block;
+}
+ 
+/* styles des liens */
+.mv-item a {
+  margin: 1px 0; /* espace les liens d'1 px */
+  padding: 8px 20px; /* marges internes pour aérer */ 
+  color: #666;
+  background: #FFF;
+  text-decoration: none; /* on vire le soulignement */
+
+  /* on définit la transition pour les navigateurs */
+  -webkit-transition: all .3s; /* Chrome/Safari */
+  -moz-transition: all .3s; /* Firefox (plus trop nécessaire) */
+  transition: all .3s; /* syntaxe officielle */
+}
+ 
+/* styles changeants au survol et focus */
+.mv-item a:hover,
+.mv-item a:focus {
+  background: #1ABC9C;
+  color: #FFF;
+  padding-left: 30px; /* décalage du contenu de 10px vers la droite (30-20 = 10) */
+}
+.menu{ position : absolute; width : auto; top : 80px;}
+h4.add{width : 387px; float : right;}
+</style>
+  <h2>Liste des formations</h2>
+  <h4 class="add"><a  href="#/ajouterformation">Ajouter Formation</a></h4>           
+  <table>
+    <thead>
+      <tr>
+        <!--<th>Code Formation</th>
+        <th>dateAccreditation</th>
+        <th>Diplome</th>
+        <th>Double Diplome</th>
+        <th>finAccreditation</th>
+        <th>NumeroAnnee</th>-->
+        <th>Nom de formation</th>
+        <!--<th>Action</th>-->
+      </tr>
+    </thead>
+    <tbody ng-repeat="f in allformations">
+      <tr>
+        <!--<td>{{f.codeFormation}}</td>
+        <td>{{f.debutAccreditation}}</td>
+        <td>{{f.diplome}}</td>
+        <td>{{f.doubleDiplome}}</td>
+        <td>{{f.finAccreditation}}</td>
+        <td>{{f.n0Annee}}</td>-->
+        <td><a href="#/details/{{f.codeFormation}}">{{f.nomFormation}}</a>
+        </td>
+        <td><a href="#/details/{{f.codeFormation}}"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-zoom-in"></span> Zoom-in
+        </button></a></td>
+        <td><a href="#/modifierformation/{{f.codeFormation}}"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-pencil"></span> Pencil 
+        </button></a>
+        </td>
+        <td><a href="#/deleteformation/{{f.codeFormation}}"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-trash"></span> Trash 
+        </button></a></td>
+        
+        </tr>
+      
+    </tbody>
+  </table>
+  
+</div>
+<div class="menu">
+	<ul class="menu-vertical">
+    <li class="mv-item"><a href="#">ACCEUIL</a></li>
+    <li class="mv-item"><a href="#/login">AUTHENTIFICATION</a></li>
+    <li class="mv-item"><a href="#/formation">FORMATIONS</a></li>
+    <li class="mv-item"><a href="#/dashboard">TABLEAU DE BORD</a></li>
+    </ul>
+  </div> 
+
+</html>

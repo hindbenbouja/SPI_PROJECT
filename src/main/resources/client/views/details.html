@@ -1,0 +1,66 @@
+
+<html>
+<head>
+<style>
+ table {
+    border-collapse: collapse;
+    width: 70%;
+    margin :auto;
+    margin-top : 150px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+a.add_frm{
+position:absolute;
+width : 200px; top : 413px; left : 779px;
+ }
+
+h2{width : 387px; margin : auto; margin-top : 100px;}
+
+
+ </style>
+ </head>
+ <body>
+<div class="container">
+  <h2>DETAILS DE FORMATION</h2>
+  <a  class="add_frm" href="#/ajouterformation">Ajouter formation</a>           
+  <table>
+    <thead>
+      <tr>
+        <th>Code Formation</th>
+        <th>dateAccreditation</th>
+        <th>Diplome</th>
+        <th>Double Diplome</th>
+        <th>finAccreditation</th>
+        <th>NumeroAnnee</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="f in formation">
+        <td>{{f.codeFormation}}</td>
+        <td>{{f.debutAccreditation}}</td>
+        <td>{{f.diplome}}</td>
+        <td>{{f.doubleDiplome}}</td>
+        <td>{{f.finAccreditation}}</td>
+        <td>{{f.n0Annee}}</td>
+      	<!-- <td>{{f.nomFormation}}</td> -->  
+        
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

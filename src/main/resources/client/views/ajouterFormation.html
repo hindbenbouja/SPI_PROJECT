@@ -1,0 +1,106 @@
+
+<html>
+<style>
+/* button submit */
+form.monForm input[type="submit"]
+{
+	border: #DDEEFF 1px solid;
+	width: 20%;
+	float : left ; 
+	margin-top : 35px;
+}
+
+form.monForm input[type="submit"]:hover
+{
+	background-color: #66CC33;
+	cursor: pointer;
+}
+
+form.monForm input[type="reset"]
+{
+	border: #DDEEFF 1px solid;
+	width: 20%;
+	float : right;
+	margin-top : 35px;
+}
+
+form.monForm input[type="reset"]:hover
+{
+	background-color: #E6484D;
+	cursor: pointer;
+}
+.panel-body{margin : auto ;  width: 50%; margin-top : 100px; background-color: green;}
+h5{margin : auto; width : 300px;  margin-top : 70px;  font-family:cursive;  font-size:x-large;  font-style:italic;}
+
+
+</style>
+<h2><a href="#/formation">Retour</a></h2>
+<div ng-controller="FormationAjouterCtrl">
+		<div class="panel-heading">
+				<h5>CREER FORMATION</h5>
+			</div>
+			<div class="panel-body">
+				<form class="monForm" ng-submit="ajouterFormation()">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Code Formation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="formation.codeFormation" placeholder="code Formation" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Nom formation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="formation.nomFormation" placeholder="Nom Formation">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Diplome</label>
+						<div class="col-sm-9">
+							<select class="form-control" ng-model="formation.diplome">
+								<option value="L">Licence</option>
+								<option value="M">Master</option>
+								<option value="D">Doctorat</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Double diplome</label>
+						<div class="col-sm-9">
+							<select class="form-control" ng-model="formation.doubleDiplome">
+								<option value="O">Oui</option>
+								<option value="N">Non</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Annees d'etude</label>
+						<div class="col-sm-9">
+							<input type="number" min="0" max="5" class="form-control" ng-model="formation.n0Annee" placeholder="Annees d'etude">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Debut accreditation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="formation.debutAccreditation" placeholder="aaaa-mm-jj">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Fin accreditation</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="formation.finAccreditation" placeholder="aaaa-mm-jj">
+						</div>
+					</div>
+					<div class="form-group">
+						<div>
+							<input type="submit" ng-click="ajouterFormation()"></input>
+						</div>
+						<div >
+							<input type="reset" ></input>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	
+
+</html>
